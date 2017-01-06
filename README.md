@@ -28,7 +28,7 @@ sdf
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/a/qgY25.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/bzrIP8r.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with gtk-screenrecorder and ImageMagick
 

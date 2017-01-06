@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [X] Fixed XSS vulnerabilty
-sdf
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
@@ -34,7 +34,7 @@ GIF created with gtk-screenrecorder and ImageMagick
 
 ## Notes
 
-Couldn't get rid of weird error where it is saying it is a non-numeric value, but it is a numeric value
+New update and got rid of error 
 
 ## License
 

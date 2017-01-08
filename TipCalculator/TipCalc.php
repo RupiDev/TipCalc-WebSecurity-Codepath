@@ -28,7 +28,7 @@
 			$percentages = array(10, 15, 20);
 			for($i = 0; $i < count($percentages); $i++)
 			{
-				echo('<input type = "radio" name = "Percentage" value = "' . $percentages[$i] . ' " >' . $percentages[$i] . '%');	
+				echo('<input type = "radio" name = "Percentage" value = "' . $percentages[$i] . '" >' . $percentages[$i] . '%');	
 			}
 		?>
 		<br>
@@ -39,7 +39,7 @@
 		if(isPostRequest())
 		{
 			
-			if(is_numeric($billTotal))
+			if(is_numeric($billTotal) && is_numeric($percentage))
 			{
 				if($billTotal > 0)
 				{

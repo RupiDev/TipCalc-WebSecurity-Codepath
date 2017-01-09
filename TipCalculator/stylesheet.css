@@ -12,3 +12,33 @@ form {
 h1 {
     text-align: center;
 }
+
+
+.reveal-if-active {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/*
+  Need to move it to the side 
+  Need to get it so it has the values
+*/
+#otherPercentage:checked ~ .reveal-if-active {
+    opacity: 1;
+    max-height: 100px;
+    overflow: visible;
+    display: inline;
+}
+
+/*input[type = "radio"]: ~ .reveal-if-active {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}*/
+
+
+
+
+/*<input class="require-if-active" type="text" id="which-dog" name="which-dog" data-require-pair="#choice-animals-dogs">
+        //</div>*/

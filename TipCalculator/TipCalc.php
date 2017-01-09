@@ -17,6 +17,7 @@
 		$percentage = $_POST['Percentage'] ?? '';
 		$billTotal = $_POST['billTotal'] ?? '';
 		$otherPercentage = $_POST['percentageOther'] ?? '';
+		$numForSplit = $_POST['numForSplit'] ?? '';
 	?>
 
 	<form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
@@ -31,14 +32,17 @@
 			{
 				echo('<input type = "radio" name = "Percentage" value = "' . $percentages[$i] . '" >' . $percentages[$i] . '%');	
 			}
+			echo ('<br>');
 			echo('<input type = "radio" name = "Percentage" id = "otherPercentage"');
 			echo('<label for = "otherPercentage"> Other Percentage</label>');
 
 			echo('<div class = "reveal-if-active">
 
-			    <input type= "text" name= "percentageOther"><br>
+			    <input type= "text" style = "width: 50px" name= "percentageOther">%<br>
 
-			    </div>');
+			    </div><br>');
+
+			echo('Split: <input type = "text" style = "width: 50px" name = "numForSplit" value = 1> person(s)');
 
 		?>
 
@@ -51,31 +55,54 @@
 		if(isPostRequest())
 		{
 			
-			if(is_numeric($billTotal) && (is_numeric($percentage) || is_numeric($otherPercentage)))
+			if(is_numeric($billTotal) && (is_numeric($percentage) || is_numeric($otherPercentage)) && is_numeric($numForSplit))
 			{
-				if($billTotal > 0)
+				if($billTotal > 0 && $numForSplit > 0)
 				{
 					if(is_numeric($percentage))
 					{
 						$tip = ($percentage / 100) * $billTotal;
 						$billTotal = $billTotal + $tip; 
+						$splitTotal = $billTotal/$numForSplit;
+
 						echo('<p>Tip: ' . '$' . $tip . '</p>');
-						echo('Bill Total: ' . '$' . $billTotal);
+						echo('Bill Total: ' . '$' . $billTotal . '<br>');
+
+						if($numForSplit > 1)
+						{
+							echo('The bill for each person is: ' . '$' . $splitTotal);
+						}
+						
 					}
 					else if(is_numeric($otherPercentage))
 					{
-						$tip = ($otherPercentage / 100) * $billTotal;
-						$billTotal = $billTotal + $tip; 
-						echo('<p>Tip: ' . '$' . $tip . '</p>');
-						echo('Bill Total: ' . '$' . $billTotal);
+						if($otherPercentage > 0)
+						{
+							$tip = ($otherPercentage / 100) * $billTotal;
+							$billTotal = $billTotal + $tip; 
+							$splitTotal = $billTotal/$numForSplit;
+
+							echo('<p>Tip: ' . '$' . $tip . '</p>');
+							echo('Bill Total: ' . '$' . $billTotal . '<br>');
+
+							if($numForSplit > 1)
+							{
+								echo('The bill for each person is: ' . '$' . $splitTotal);
+							}
+
+						}
+						else
+						{
+							echo 'The custom percentage is a negative value';
+						}
+						
 					}
-					
+
 				}
 				else
 				{
 					echo 'The bill total is negative';
 				}
-				
 			}
 			else
 			{
@@ -87,7 +114,6 @@
 
 		}
 		?>
-		
 		<br>
 		<input type = "submit" value = "Submit">
 	</form>

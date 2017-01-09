@@ -35,8 +35,6 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://imgur.com/oBAL5ec.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with gtk-screenrecorder and ImageMagick
-
 ## Notes
 
 New update and got rid of error 

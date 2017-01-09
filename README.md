@@ -17,18 +17,23 @@ The following **required** functionality is complete:
 * [x] Submitted form values are retained when errors or results are shown.
 
 The following **optional** features are implemented:
-* [ ] Add support for custom tip percentage
-* [ ] Add support for splitting the tip and total
+* [X] Add support for custom tip percentage
+* [X] Add support for splitting the tip and total
+* [X] Add functionality for different curruncies
+* [X] Add Error Handling
 
 The following **additional** features are implemented:
 
 * [X] Fixed XSS vulnerabilty
+* [X] Better Design
+* [X] Default US Dollars and Splitting is 1, unless changed
+
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/bzrIP8r.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/oBAL5ec.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with gtk-screenrecorder and ImageMagick
 
